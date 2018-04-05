@@ -1,0 +1,24 @@
+{
+  "name": "restapi_skeleton_nodejs",
+  "version": "1.0.0",
+  "description": "A template of a RESTful API",
+  "main": "rest_api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matias-Barrios/RESTapi_Skeleton_NodeJS.git"
+  },
+  "author": "Matias Barrios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matias-Barrios/RESTapi_Skeleton_NodeJS/issues"
+  },
+  "homepage": "https://github.com/Matias-Barrios/RESTapi_Skeleton_NodeJS#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
+}
