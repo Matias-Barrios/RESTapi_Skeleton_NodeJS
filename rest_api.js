@@ -40,20 +40,43 @@ function authorize(base64_credentials, callback){
     }
  }
 
+ function dame_primos( limite ) {
+    let result = "";
+    let es_primo = true;
+    
+    for ( tope=limite ; tope > 0 ; tope --) {
+       
+        es_primo = 0;
+        
+        for ( j=tope; j > 0 ; j--){
+            
+            (tope % j === 0 ) ? es_primo++ : null ;
+            
+        }
+
+        ( es_primo === 2 ) ? result+= tope + ( ( (tope - 2) > 0 ) ? '\n<BR>' : null  ) : null ;
+  
+    }
+    return result;
+ }
 // END Functions
 
 
 // GET Methdods
 app.get('/health', function (req, res) {
-	console.log('Recibido!');
 	res.header('Content-Type', 'text/html'); 
 	res.status(200).end("Im okay!");
   
 });
 
+app.get('/dame_primos/:limite', function (req, res) {
+    res.header('Content-Type', 'text/html'); 
+	res.status(200).end(dame_primos(req.params.limite));
+  
+});
+
 app.get('/authorize', function (req, res) {
-    console.log(req.header('Authorization'));
-	authorize(req.header('Authorization'), function(result,error) {
+    authorize(req.header('Authorization'), function(result,error) {
         console.log(req.header('Authorization'));
         if(error){
             res.header('Content-Type', 'text/html'); 
