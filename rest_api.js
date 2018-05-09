@@ -54,7 +54,7 @@ function authorize(base64_credentials, callback){
             
         }
 
-        ( es_primo === 2 ) ? result+= tope + ( ( (tope - 2) > 0 ) ? '\n,' : null  ) : null ;
+        ( es_primo === 2 ) ? result+= tope + ( ( (tope - 2) > 0 ) ? ',' : null  ) : null ;
   
     }
     return result;
